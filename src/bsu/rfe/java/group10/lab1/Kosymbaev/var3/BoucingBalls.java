@@ -3,7 +3,7 @@ package bsu.rfe.java.group10.lab1.Kosymbaev.var3;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
-public class BoucingBalls {
+public class BoucingBalls implements Runnable{
 
     // Максимальный радиус, который может иметь мяч
     private static final int MAX_RADIUS = 40;
@@ -33,8 +33,7 @@ public class BoucingBalls {
         this.field = field;
 
         // Радиус мяча случайного размера
-        radius = new Double(Math.random()*(MAX_RADIUS -
-                MIN_RADIUS)).intValue() + MIN_RADIUS;
+        radius = new Double(Math.random()*(MAX_RADIUS - MIN_RADIUS)).intValue() + MIN_RADIUS;
 
         speed = new Double(Math.round(5 * MAX_SPEED / radius)).intValue();
         if (speed>MAX_SPEED) {
